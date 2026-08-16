@@ -2,7 +2,7 @@ import os
 import requests
 
 # 1. Setup Configuration
-OUTLINE_API_URL = os.environ.get("OUTLINE_URL")  # Replace with self-hosted URL if needed
+OUTLINE_API_URL = os.environ.get("OUTLINE_API_URL")  # Replace with self-hosted URL if needed
 OUTLINE_API_KEY = os.environ.get("OUTLINE_API_KEY")  # Safely load your API Key
 
 HEADERS = {
