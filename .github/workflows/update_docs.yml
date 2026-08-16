@@ -1,0 +1,31 @@
+name: Refresh Public Docs Page
+on:
+  schedule:
+    - cron: '0 * * * *' # Automatically runs every single hour
+  workflow_dispatch: # Allows you to manually click "Run" anytime
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Install Dependencies
+      run: pip install requests
+
+    - name: Generate HTML Page
+      env:
+        OUTLINE_API_KEY: ${{ secrets.OUTLINE_API_KEY }}
+      run: python generate_docs.py
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./
