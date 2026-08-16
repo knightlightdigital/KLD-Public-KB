@@ -7,6 +7,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # 👈 This explicitly allows pushing code back to your repo
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
