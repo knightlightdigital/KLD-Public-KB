@@ -55,7 +55,7 @@ def build_html_page(docs):
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Public Documentation Hub</title>
+        <title>Knightlight Digital Public Documentation</title>
         <style>
             body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f9f9fb; color: #111; margin: 0; padding: 40px 20px; }}
             .container {{ max-width: 650px; margin: 0 auto; }}
